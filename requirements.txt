@@ -1,0 +1,5 @@
+requests==2.32.3
+beautifulsoup4==4.12.3
+pypdf==4.3.1
+anthropic==0.34.2
+playwright==1.47.0
