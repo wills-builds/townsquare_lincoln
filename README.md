@@ -27,12 +27,38 @@ No more reading 50-page PDF agendas.
 
 ### 1. Install Python & Dependencies
 
-```bash
-# Install Python 3.12+ from python.org
+**Install Python:**
+- Download Python 3.12+ from **python.org/downloads**
+- **Windows:** Check "Add Python to PATH" during installation
+- **Mac:** Python 3 is usually pre-installed, or use Homebrew: `brew install python3`
 
-# Install packages
+**Install Dependencies:**
+
+Windows:
+```powershell
+# If pip works:
 pip install -r requirements.txt
+
+# If pip doesn't work:
+python -m pip install -r requirements.txt
+
+# Or try:
+py -m pip install -r requirements.txt
 ```
+
+Mac/Linux:
+```bash
+pip3 install -r requirements.txt
+
+# Or:
+python3 -m pip install -r requirements.txt
+```
+
+**If you need Visual Studio Build Tools (Windows only):**
+1. Go to **visualstudio.microsoft.com/downloads/**
+2. Download "Build Tools for Visual Studio 2022"
+3. Install "Desktop development with C++"
+4. Restart terminal and try again
 
 ### 2. Set Your API Key
 
