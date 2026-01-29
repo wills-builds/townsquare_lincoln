@@ -216,8 +216,7 @@ Check out the full **TownSquare** project:
 - Database storage
 - Email alerts
 
-GitHub: github.com/wills-builds/townsquare
-
+GitHub: https://github.com/wills-builds/townsquare
 ---
 
 ## Contributing
