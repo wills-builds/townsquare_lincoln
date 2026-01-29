@@ -26,6 +26,7 @@ class LincolnMeetingScraper:
         Fetch meeting data from Granicus
         Returns list of meeting dictionaries with title, date, agenda_url, video_url
         Looks for meetings from 3 months ago to 3 months in the future (6 month window)
+        Dynamically updates daily - always shows past 90 days and future 90 days
         """
         from datetime import datetime, timedelta
         from bs4 import BeautifulSoup
@@ -34,6 +35,14 @@ class LincolnMeetingScraper:
         print(f"🔍 Searching for Lincoln CA City Council meetings (past 3 months + future 3 months)...")
         
         meetings = []
+        
+        # Calculate 6-month window (updates daily)
+        from datetime import datetime, timedelta
+        today = datetime.now()
+        three_months_ago = today - timedelta(days=90)
+        three_months_ahead = today + timedelta(days=90)
+        
+        print(f"   Date range: {three_months_ago.strftime('%B %d, %Y')} to {three_months_ahead.strftime('%B %d, %Y')}")
         
         try:
             # Try to scrape Granicus calendar
@@ -49,10 +58,6 @@ class LincolnMeetingScraper:
                 
                 # Find all table rows
                 rows = soup.find_all('tr')
-                
-                today = datetime.now()
-                three_months_ago = today - timedelta(days=90)
-                three_months_ahead = today + timedelta(days=90)
                 
                 for row in rows:
                     try:
